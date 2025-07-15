@@ -19,21 +19,17 @@ from django.urls import path
 from . import views as v
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    
     path('register/',v.register,name="register"),
     path('login/',v.login,name="login"),
     path('logout/',v.logout,name="logout"),
     path('dashboard/',v.dashboard,name='dashboard'),
-    path('',v.dashboard,name='dashboard'),
+    
     path('activate/<uidb64>/<token>/',v.activate,name='activate'),
     path('forgotpassword/',v.forgotpassword,name='forgotpassword'),
     path('resetpass_validate/<uidb64>/<token>/',v.resetpass_validate,name='resetpass_validate'),
     path('resetpassword/',v.resetpassword,name='resetpassword'),
     path('my_orders/',v.my_orders,name="my_orders"),
     path('edit_profile/',v.edit_profile,name='edit_profile')
-
-
-
-    
-    
+  
 ]
